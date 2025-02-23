@@ -1,0 +1,3 @@
+*/5 * * * * /bin/sh /var/www/cron.sh
+0 4 * * * php -f /var/www/shell/indexer.php reindexall
+0 3 * * * php -f /var/www/shell/log.php clean --days 15

@@ -43,21 +43,3 @@ stdout_logfile=/dev/stdout
 stdout_logfile_maxbytes=0
 stderr_logfile=/dev/stderr
 stderr_logfile_maxbytes=0
-
-[program:sshd]
-command=/usr/sbin/sshd -D -e
-autostart={% if ENABLE_SSH == 'On' %}true{% else %}false{% endif %}
-user=root
-stdout_logfile=/dev/stdout
-stdout_logfile_maxbytes=0
-stderr_logfile=/dev/stderr
-stderr_logfile_maxbytes=0
-
-[program:redis]
-command=redis-server --save "" --appendonly no
-autostart={% if ENABLE_REDIS == 'On' %}true{% else %}false{% endif %}
-user=nginx
-stdout_logfile=/dev/stdout
-stdout_logfile_maxbytes=0
-stderr_logfile=/dev/stderr
-stderr_logfile_maxbytes=0
